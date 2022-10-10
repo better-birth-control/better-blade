@@ -4,7 +4,7 @@ namespace BetterBirthControl\Better\View\Components;
 
 use Illuminate\View\Component;
 
-class Paragraph extends Component
+class BetterParagraph extends Component
 {
     /**
      * Create a new component instance.

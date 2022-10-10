@@ -2,14 +2,14 @@
 
 namespace BetterBirthControl\Better\View\Components;
 
-use Illuminate\Support\Str;
 use Illuminate\View\Component;
+use Str;
 
-class Checkbox extends Component
+class BetterCollapsible extends Component
 {
-    public string $inputId;
+    public string $headerId;
 
-    public string $labelId;
+    public string $contentId;
 
     /**
      * Create a new component instance.
@@ -17,12 +17,12 @@ class Checkbox extends Component
      * @return void
      */
     public function __construct(
-        public string $label,
-        public ?string $error = null,
-        public bool $required = false,
+        public string $header,
+        public bool $last = false,
+        public bool $open = false,
     ) {
-        $this->inputId = Str::random();
-        $this->labelId = Str::random();
+        $this->headerId = Str::random();
+        $this->contentId = Str::random();
     }
 
     /**
@@ -32,6 +32,6 @@ class Checkbox extends Component
      */
     public function render()
     {
-        return view('better::components.checkbox');
+        return view('better::components.collapsible');
     }
 }

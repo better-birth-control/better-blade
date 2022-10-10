@@ -4,7 +4,7 @@ namespace BetterBirthControl\Better\View\Components;
 
 use Illuminate\View\Component;
 
-class Icon extends Component
+class BetterIcon extends Component
 {
     public string $icon;
 

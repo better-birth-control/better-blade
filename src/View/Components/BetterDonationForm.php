@@ -2,9 +2,10 @@
 
 namespace BetterBirthControl\Better\View\Components;
 
+use Illuminate\Support\Facades\Lang;
 use Illuminate\View\Component;
 
-class Clouds extends Component
+class BetterDonationForm extends Component
 {
     /**
      * Create a new component instance.
@@ -16,6 +17,15 @@ class Clouds extends Component
         //
     }
 
+    public function getLanguage(): string
+    {
+        if (in_array(Lang::locale(), ['de', 'en'])) {
+            return Lang::locale();
+        }
+
+        return 'en';
+    }
+
     /**
      * Get the view / contents that represent the component.
      *
@@ -23,6 +33,6 @@ class Clouds extends Component
      */
     public function render()
     {
-        return view('better::components.clouds');
+        return view('better::components.donation-form');
     }
 }

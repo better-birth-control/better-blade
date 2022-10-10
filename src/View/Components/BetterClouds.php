@@ -4,16 +4,15 @@ namespace BetterBirthControl\Better\View\Components;
 
 use Illuminate\View\Component;
 
-class Loading extends Component
+class BetterClouds extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(
-        public string $theme
-    ) {
+    public function __construct()
+    {
         //
     }
 
@@ -24,6 +23,6 @@ class Loading extends Component
      */
     public function render()
     {
-        return view('better::components.loading');
+        return view('better::components.clouds');
     }
 }

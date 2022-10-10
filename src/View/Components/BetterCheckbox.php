@@ -5,13 +5,11 @@ namespace BetterBirthControl\Better\View\Components;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
 
-class Input extends Component
+class BetterCheckbox extends Component
 {
     public string $inputId;
 
     public string $labelId;
-
-    public string $helpId;
 
     /**
      * Create a new component instance.
@@ -20,15 +18,11 @@ class Input extends Component
      */
     public function __construct(
         public string $label,
-        public string $placeholder,
-        public ?string $help = null,
         public ?string $error = null,
         public bool $required = false,
-        public string $type = 'text',
     ) {
         $this->inputId = Str::random();
         $this->labelId = Str::random();
-        $this->helpId = Str::random();
     }
 
     /**
@@ -38,6 +32,6 @@ class Input extends Component
      */
     public function render()
     {
-        return view('better::components.input');
+        return view('better::components.checkbox');
     }
 }

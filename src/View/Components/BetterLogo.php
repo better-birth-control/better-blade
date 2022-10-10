@@ -3,26 +3,19 @@
 namespace BetterBirthControl\Better\View\Components;
 
 use Illuminate\View\Component;
-use Str;
 
-class Collapsible extends Component
+class BetterLogo extends Component
 {
-    public string $headerId;
-
-    public string $contentId;
-
     /**
      * Create a new component instance.
      *
      * @return void
      */
     public function __construct(
-        public string $header,
-        public bool $last = false,
-        public bool $open = false,
+        public string $variant = 'full',
+        public string $theme = 'bright',
     ) {
-        $this->headerId = Str::random();
-        $this->contentId = Str::random();
+        //
     }
 
     /**
@@ -32,6 +25,6 @@ class Collapsible extends Component
      */
     public function render()
     {
-        return view('better::components.collapsible');
+        return view('better::components.logo');
     }
 }

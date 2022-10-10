@@ -4,7 +4,7 @@ namespace BetterBirthControl\Better\View\Components;
 
 use Illuminate\View\Component;
 
-class Heading extends Component
+class BetterLink extends Component
 {
     /**
      * Create a new component instance.
@@ -12,21 +12,22 @@ class Heading extends Component
      * @return void
      */
     public function __construct(
-        public string $size,
-        public ?string $as = null,
-        public ?string $underline = null,
+        public ?string $url = null,
+        public ?string $ariaControls = null,
     ) {
         //
     }
 
-    public function getLevel()
+    public function isExternal()
     {
-        $size = $this->size;
-        if ($size === 'display1' || $size === 'display2') {
-            $size = 'h1';
-        }
+      if (! $this->url) {
+        return false;
+      }
 
-        return $this->as ?? $size;
+      $url_host = parse_url($this->url, PHP_URL_HOST);
+      $base_url_host = parse_url(url('/'), PHP_URL_HOST);
+
+      return $url_host !== $base_url_host && ! empty($url_host);
     }
 
     /**
@@ -36,6 +37,6 @@ class Heading extends Component
      */
     public function render()
     {
-        return view('better::components.heading');
+        return view('better::components.link');
     }
 }

@@ -4,7 +4,7 @@ namespace BetterBirthControl\Better\View\Components;
 
 use Illuminate\View\Component;
 
-class Image extends Component
+class BetterImage extends Component
 {
     /**
      * Create a new component instance.
