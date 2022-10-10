@@ -33,7 +33,6 @@ class BetterServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'better');
         Blade::component(BetterButton::class);
         Blade::component(BetterCheckbox::class);
-        Blade::component(BetterClouds::class);
         Blade::component(BetterCollapsible::class);
         Blade::component(BetterDebug::class);
         Blade::component(BetterDonationForm::class);
@@ -47,7 +46,7 @@ class BetterServiceProvider extends ServiceProvider
         Blade::component(BetterParagraph::class);
 
         $this->publishes([
-          __DIR__.'/../resources/assets' => public_path('vendor/better'),
+          __DIR__.'/../resources/assets' => resource_path('vendor/better'),
           __DIR__.'/../resources/favicon' => public_path(),
         ], 'better-assets');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');

@@ -19,7 +19,7 @@ class BetterIcon extends Component
         public ?float $strokeWidth = null,
     ) {
         $this->icon = file_get_contents(
-          public_path('vendor/better/icons/'.$this->name.'.svg')
+            resource_path('vendor/better/icons/'.$this->name.'.svg')
         );
 
         if ($this->strokeWidth) {
