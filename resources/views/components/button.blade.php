@@ -11,7 +11,7 @@
         @endif
     </div>
     @if($loading)
-      <x-better::loading :theme="$variant === \BetterBirthControl\Better\View\Components\ButtonVariants::PRIMARY ? 'dark' : 'light'" x-show="{{ $loading }}" x-cloak></x-better::loading>
+      <x-better-loading :theme="$variant === \BetterBirthControl\Better\View\Components\ButtonVariants::PRIMARY ? 'dark' : 'light'" x-show="{{ $loading }}" x-cloak></x-better-loading>
     @endif
     @if($isExternal())
         <div class="better-visually-hidden">
