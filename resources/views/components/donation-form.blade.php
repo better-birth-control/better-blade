@@ -1,4 +1,4 @@
-<div>
+<div {{ $attributes }}>
     <script type="text/javascript">
         var _bp_iframe        = _bp_iframe || {};
         _bp_iframe.project_id = 113147; /* REQUIRED */
