@@ -15,6 +15,7 @@ class BetterHeading extends Component
         public string $size,
         public ?string $as = null,
         public ?string $underline = null,
+        public ?string $spanClasses = null,
     ) {
         //
     }

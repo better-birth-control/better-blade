@@ -81,7 +81,8 @@ class BetterImage extends Component
             $desiredSpace = 12 / $this->$bp;
             $columnWidth = $content['contentWidth'] / $desiredSpace;
             $allGapWidths = $content['gutterWidth'] * round($desiredSpace - 1);
-            $size = 'calc('.round($columnWidth, 1).'vw - '.$allGapWidths.'px)';
+
+            $size = !$allGapWidths ? round($columnWidth, 1).'vw' : 'calc('.round($columnWidth, 1).'vw - '.$allGapWidths.'px)';
 
             if ($bp === $defaultBp) {
                 $sizes[] = $size;
