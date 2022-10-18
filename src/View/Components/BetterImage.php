@@ -58,7 +58,7 @@ class BetterImage extends Component
                 'gutterWidth' => 24,
             ],
             'xl' => [
-                'viewport' => 1440,
+                'viewport' => 1441,
                 'contentWidth' => 86,
                 'gutterWidth' => 32,
             ],
