@@ -8,9 +8,14 @@
         @endif
     </label>
     <div class="inputWrapper">
-        <{{ $type === 'textarea' ? 'textarea' : 'input' }} {!! $type !== 'textarea' ? 'type="' . $type . '"' : '' !!} id="{{ $inputId }}" placeholder="{{ $placeholder }}" required="{{ $required ? 'required' : '' }}" aria-labelledby="{{ $labelId }}" {!! $help ? 'aria-describedby="' . $helpId . '"' : '' !!} {!! $error ? ':aria-invalid="' . $error . '"' : '' !!} {{ $attributes }}></{{ $type === 'textarea' ? 'textarea' : 'input' }}>
+        <select id="{{ $inputId }}" required="{{ $required ? 'required' : '' }}" aria-labelledby="{{ $labelId }}" {!! $help ? 'aria-describedby="' . $helpId . '"' : '' !!} {!! $error ? ':aria-invalid="' . $error . '"' : '' !!} {{ $attributes }}>
+            @foreach($options as $value => $option)
+                <option value="{{ $value }}">{{ $option }}</option>
+            @endforeach
+        </select>
+        <x-better-icon name="nav-arrow-down" size="small" class="select"></x-better-icon>
         @if($error)
-            <x-better-icon name="cancel" size="small" :x-show="$error ?? 'false'" x-cloak></x-better-icon>
+            <x-better-icon name="cancel" size="small" class="error" :x-show="$error ?? 'false'" x-cloak></x-better-icon>
         @endif
     </div>
     @if($help)
