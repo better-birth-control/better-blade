@@ -3,6 +3,7 @@
     $size,
     'bold' => $bold,
     'no-spacer' => $noSpacer,
+    'no-color' => $noColor,
     ])->merge() }}
 >
     {{ $slot }}

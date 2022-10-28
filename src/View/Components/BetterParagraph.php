@@ -15,6 +15,7 @@ class BetterParagraph extends Component
         public string $size,
         public bool $bold = false,
         public bool $noSpacer = false,
+        public bool $noColor = false,
     ) {
         //
     }
