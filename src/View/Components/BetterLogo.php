@@ -14,6 +14,7 @@ class BetterLogo extends Component
     public function __construct(
         public string $variant = 'full',
         public string $theme = 'bright',
+        public string $svgClasses = '',
     ) {
         //
     }
