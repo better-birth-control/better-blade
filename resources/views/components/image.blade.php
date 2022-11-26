@@ -7,7 +7,7 @@
         @foreach($getSources() as $source)
             <source srcset="{{ $source['srcset'] }}" sizes="{{ $source['sizes'] }}" type="{{ $source['type'] }}">
         @endforeach
-        <img src="{{ $src }}" alt="{{ $alt }}" width="{{ $width }}" height="{{ $height }}" loading="{{ $eager ? 'eager' : 'lazy' }}" class="{{ $imageClasses }}" style="{{ $objectPosition ? 'object-position: ' . $objectPosition . ';' : '' }} {{ $maxHeight ? 'max-height: ' . $maxHeight . 'px;' : '' }}">
+        <img src="{{ $src }}" alt="{{ htmlentities(trim($alt)) }}" width="{{ $width }}" height="{{ $height }}" loading="{{ $eager ? 'eager' : 'lazy' }}" decoding="async" class="{{ $imageClasses }}" style="{{ $objectPosition ? 'object-position: ' . $objectPosition . ';' : '' }} {{ $maxHeight ? 'max-height: ' . $maxHeight . 'px;' : '' }}">
     </picture>
     @if($caption)
         <figcaption>
