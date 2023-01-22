@@ -15,6 +15,7 @@ class BetterProgressBar extends Component
     public function __construct(
         public int|float $current,
         public int|float $max,
+        public ?string $append = null,
     ) {
     }
 
