@@ -16,6 +16,7 @@ use BetterBirthControl\Better\View\Components\BetterLink;
 use BetterBirthControl\Better\View\Components\BetterLoading;
 use BetterBirthControl\Better\View\Components\BetterLogo;
 use BetterBirthControl\Better\View\Components\BetterParagraph;
+use BetterBirthControl\Better\View\Components\BetterProgressBar;
 use BetterBirthControl\Better\View\Components\BetterSelect;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -45,6 +46,7 @@ class BetterServiceProvider extends ServiceProvider
         Blade::component(BetterLoading::class);
         Blade::component(BetterLogo::class);
         Blade::component(BetterParagraph::class);
+        Blade::component(BetterProgressBar::class);
         Blade::component(BetterSelect::class);
 
         $this->publishes([
